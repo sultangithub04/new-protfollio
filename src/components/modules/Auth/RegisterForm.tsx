@@ -16,8 +16,8 @@ import {
 } from "@/components/ui/form";
 
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
-
+import { register } from "@/action/auth";
+import toast from "react-hot-toast"
 
 // type RegisterFormValues = {
 //   name: string;
@@ -38,13 +38,12 @@ export default function RegisterForm() {
   const router = useRouter();
   const onSubmit = async (values: FieldValues) => {
     try {
-      // const res = await register(values);
-      // if (res?.data?.id) {
-      //   toast.success("User Registered Successfully");
-      console.log('jhk');
+      const res = await register(values);
+      if (res?.data?.id) {
+        toast.success("User Registered Successfully");
         router.push("/login");
       }
-     catch (err: any) {
+    } catch (err: any) {
       toast.error(err.message || "Something went wrong!");
       console.error("Registration error:", err);
 
@@ -138,8 +137,4 @@ export default function RegisterForm() {
       </Form>
     </div>
   );
-}
-
-function register(values: FieldValues) {
-  throw new Error("Function not implemented.");
 }
