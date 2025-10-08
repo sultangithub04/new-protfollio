@@ -4,14 +4,14 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
+// import { Button } from "@/components/ui/button"
 const HeroSection = () => {
-  const skills = {
-  Frontend: ["HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS", "React.js", "Next.js"],
-  Backend: ["Node.js", "Express.js", "Prisma", "GraphQL", "Docker"],
-  Databases: ["MongoDB", "Mongoose", "SQL", "PostgreSQL"],
-  Tools: ["Firebase", "JWT Authentication", "Axios", "Redux", "AWS"],
-};
+  // const skills = {
+  //   Frontend: ["HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS", "React.js", "Next.js"],
+  //   Backend: ["Node.js", "Express.js", "Prisma", "GraphQL", "Docker"],
+  //   Databases: ["MongoDB", "Mongoose", "SQL", "PostgreSQL"],
+  //   Tools: ["Firebase", "JWT Authentication", "Axios", "Redux", "AWS"],
+  // };
   return (
     <section className="lg:py-16">
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -25,10 +25,13 @@ const HeroSection = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-600">
               Hi, i am Sultan{" "}
             </span>
+            {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-600">
+              Hi, I am Sultan
+            </span> */}
             <br></br>
             <TypeAnimation
               sequence={[
-                "Web Developer",
+                "Developer",
                 1000,
                 "Next.js ",
                 1000,
@@ -47,7 +50,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-           A Full-Stack Web Developer. Welcome to my digital playground! I'm Sultan, a passionate Full-Stack Web Developer dedicated to turning your ideas into captivating online experiences. Skills that set me apart include frontend and backend development: HTML, CSS, JavaScript, TypeScript, TailwindCSS, Firebase, JWT, Axios, React.js, Next.js, Node.js, Express.js, Prisma, Docker, AWS, GraphQL, Redux, MongoDB, Mongoose, SQL, PostgreSQL, and many more.
+            A Full-Stack Web Developer. Welcome to my digital playground! I am Sultan, a passionate Full-Stack Web Developer dedicated to turning your ideas into captivating online experiences. Skills that set me apart include frontend and backend development: HTML, CSS, JavaScript, TypeScript, TailwindCSS, Firebase, JWT, Axios, React.js, Next.js, Node.js, Express.js, Prisma, Docker, AWS, GraphQL, Redux, MongoDB, Mongoose, SQL, PostgreSQL, and many more.
           </p>
           <div>
             <Link
@@ -56,14 +59,7 @@ const HeroSection = () => {
             >
               Hire Me
             </Link>
-            {/* <Link
-              href="/"
-              className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3"
-            >
-              <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-                Download CV
-              </span>
-            </Link> */}
+   
             <a
               href="/cv.pdf"
               download
