@@ -38,12 +38,13 @@ export default function RegisterForm() {
   const router = useRouter();
   const onSubmit = async (values: FieldValues) => {
     try {
-      const res = await register(values);
-      if (res?.data?.id) {
-        toast.success("User Registered Successfully");
+      // const res = await register(values);
+      // if (res?.data?.id) {
+      //   toast.success("User Registered Successfully");
+      console.log('jhk');
         router.push("/login");
       }
-    } catch (err: any) {
+     catch (err: any) {
       toast.error(err.message || "Something went wrong!");
       console.error("Registration error:", err);
 
@@ -137,4 +138,8 @@ export default function RegisterForm() {
       </Form>
     </div>
   );
+}
+
+function register(values: FieldValues) {
+  throw new Error("Function not implemented.");
 }
