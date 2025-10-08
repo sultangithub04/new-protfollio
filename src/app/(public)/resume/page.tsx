@@ -1,5 +1,6 @@
+import { auth } from "@/app/auth";
 import ResumeView from "@/components/modules/resume/ResumeView";
-import { auth } from "@/lib/auth";
+
 
 
 const defaultData = {
