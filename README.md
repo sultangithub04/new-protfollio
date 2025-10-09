@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Personal Portfolio Website (Frontend)
 
-## Getting Started
+A modern, responsive personal portfolio built with **Next.js**, **TypeScript**, and **Tailwind CSS**, featuring **ISR**, **dynamic blog management**, **project showcase**, and a **secure owner dashboard**.
 
-First, run the development server:
+This repository contains the **frontend** of the portfolio.  
+The **backend** (Express + Prisma + PostgreSQL) is hosted separately.
 
+---
+
+## 🚀 Live Links
+
+- **Frontend (Vercel):** [https://new-protfollio.vercel.app](https://new-protfollio.vercel.app)
+- **Backend API (Vercel):** [https://portfoliobackend-ebon.vercel.app](https://portfoliobackend-ebon.vercel.app)
+
+---
+
+## 📖 Project Overview
+
+This portfolio website serves as both a public-facing showcase and a private dashboard for managing content.
+
+### ✨ Key Features
+
+#### 🧭 Public Pages
+- **Home / About Me:**  
+  Static personal info, fetched via **SSG** for speed.
+- **Blog:**  
+  - View all blogs (ISR-enabled for incremental updates).  
+  - Individual blog pages generated using `getStaticPaths` + `revalidate`.
+- **Projects:**  
+  Dynamic project listing using **ISR** for efficient regeneration.
+
+#### 🔐 Private Dashboard
+- **Authentication & Authorization:**  
+  - Secure JWT-based login for the owner only.  
+  - Passwords stored as bcrypt hashes.
+- **Dashboard Access:**  
+  - Create, edit, delete blogs and projects.  
+  - Manage content via a user-friendly interface.
+
+#### 💬 Feedback & Error Handling
+- Integrated **react-hot-toast** for instant success/error messages.
+- Comprehensive **form validation** with clear user messages.
+- Handles API/network/unauthorized errors gracefully.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-------------|
+| Framework | Next.js 15 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| State | React Hooks / Context |
+| Notifications | react-hot-toast |
+| Deployment | Vercel |
+| Auth | JWT (via backend) |
+| Data Fetching | ISR / SSG / CSR (as needed) |
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone Repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/portfolio-frontend.git
+cd portfolio-frontend
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. Install Dependencies
+```bash
+npm install
+```

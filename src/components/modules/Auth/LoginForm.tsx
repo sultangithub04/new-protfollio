@@ -36,6 +36,7 @@ export default function LoginForm() {
         ...values,
         redirect: false,
       });
+      console.log(result);
 
       if (result?.ok) {
         toast.success("User Logged in Successfully");

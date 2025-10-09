@@ -45,8 +45,10 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
             return null;
           }
 
-          const user = await res.json();
-
+          const result = await res.json();
+          const user= result.user
+          const token =result.token
+          console.log("Response From Backend:", user, token);
           if (user.id) {
             return {
               id: user?.id,
