@@ -27,7 +27,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
 
           const data = await res.json();
 
-          if (!res.ok || !data?.id || !data?.success) {
+          if (!res.ok || !data?.id) {
             throw new Error(data?.message || "Invalid email or password");
           }
 
