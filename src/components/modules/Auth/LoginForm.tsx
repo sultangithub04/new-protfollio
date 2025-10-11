@@ -16,48 +16,53 @@ import {
 } from "@/components/ui/form";
 import Image from "next/image";
 
-import toast from "react-hot-toast";
+
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { signIn } from "next-auth/react";
+import toast from "react-hot-toast";
 
 
 
+const loginSchema = z.object({
+  email: z.email(),
+  password: z.string().min(6),
+})
 export default function LoginForm() {
-  const form = useForm<FieldValues>({
+
+  const form = useForm<z.infer<typeof loginSchema>>({
+    resolver: zodResolver(loginSchema),
     defaultValues: {
       email: "",
       password: "",
     },
-  });
+  })
 
   const onSubmit = async (values: FieldValues) => {
+    const result = await signIn("credentials", {
+      ...values,
+      redirect: false,
+    });
 
-    try {
-      const result = await signIn("credentials", {
-        ...values,
-        redirect: false,
-      });
-      console.log(result);
+    console.log("Login result:", result);
 
-      if (result?.ok) {
-        toast.success("User Logged in Successfully");
-        window.location.href = "/dashboard";
-      } else {
-        toast.error(result?.error || "User Login Failed");
-      }
-    } catch (err: any) {
-      console.error("Login error:", err);
-      toast.error(err?.message || "Something went wrong!");
+
+    if (result?.error === "Configuration") {
+      toast.error("Invalid email or password or credentials");
+      return; 
+    }
+
+    if (result?.ok) {
+      toast.success("User Logged in Successfully");
+      window.location.href = "/dashboard";
     }
   };
 
-  const handleSocialLogin = async (provider: "google" | "github") => {
-    try {
-      await signIn(provider, {
-        redirectTo: "/", // v5 এ "callbackUrl" না, "redirectTo" ব্যবহার করতে হয়
-      });
-    } catch (error) {
-      console.error("Social login error:", error);
-    }
+
+  const handleSocialLogin = (provider: "google" | "github") => {
+    signIn(provider, {
+      callbackUrl: "/dashboard",
+    })
   };
 
   return (
