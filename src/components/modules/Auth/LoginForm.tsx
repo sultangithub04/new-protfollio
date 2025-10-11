@@ -48,7 +48,7 @@ export default function LoginForm() {
 
 
     if (result?.error === "Configuration") {
-      toast.error("Invalid email or password or credentials");
+      toast.error("Invalid credentials");
       return; 
     }
 

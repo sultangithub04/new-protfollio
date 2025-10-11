@@ -19,15 +19,20 @@ import { useRouter } from "next/navigation";
 import { register } from "@/action/auth";
 import toast from "react-hot-toast"
 
-// type RegisterFormValues = {
-//   name: string;
-//   email: string;
-//   phone: string;
-//   password: string;
-// };
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+
+const registerSchema = z.object({
+  name: z.string().min(2, { error: "Name is to short" }).max(50),
+  email: z.email(),
+  phone: z.string().min(11).max(11),
+  password: z.string().min(6),
+
+})
 
 export default function RegisterForm() {
-  const form = useForm<FieldValues>({
+  const form = useForm<z.infer<typeof registerSchema>>({
+    resolver: zodResolver(registerSchema),
     defaultValues: {
       name: "",
       email: "",
