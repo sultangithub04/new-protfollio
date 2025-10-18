@@ -3,10 +3,9 @@
 
 import { createPortfollio } from "@/action/createPortfollio";
 import SingleImageUploader from "@/components/singleImageFileUpload";
-
 import Form from "next/form";
+
 import { useState } from "react";
-import toast from "react-hot-toast";
 
 
 export default function CreatePortfollioForm() {
@@ -25,7 +24,7 @@ export default function CreatePortfollioForm() {
     }
 
     await createPortfollio(newFormData);
-    toast.success("new portfollio created")
+
   };
   return (
     <Form
@@ -128,6 +127,7 @@ export default function CreatePortfollioForm() {
       >
         Submit
       </button>
+
     </Form>
   );
 }
