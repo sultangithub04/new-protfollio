@@ -15,17 +15,29 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col bg-[#121212] ">
 
       <div className="container mt-24 mx-auto px-12 py-4">
-        <HeroSection/>
+        <HeroSection />
         <ProjectsSection />
         <AchievementsSection />
         <AboutSection />
-        <div>
+        {/* <div>
           <h2 className="text-center my-5 text-4xl font-bold text text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">Featured Posts</h2>
           <div className="grid grid-cols-3 gap-4 max-w-6xl mx-auto">
             {blogs.data?.slice(0, 3).map((blog: any) => (<BlogCard key={blog?.id} post={blog} />))}
           </div>
+        </div> */}
+
+        <div className="px-4">
+          <h2 className="text-center my-8 text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+            Featured Posts
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {blogs.data?.slice(0, 3).map((blog: any) => (
+              <BlogCard key={blog?.id} post={blog} />
+            ))}
+          </div>
         </div>
-        <EmailSection/>
+        <EmailSection />
       </div>
 
     </main>

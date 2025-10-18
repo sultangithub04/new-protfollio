@@ -1,13 +1,35 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { createPortfollio } from "@/action/createPortfollio";
+import SingleImageUploader from "@/components/singleImageFileUpload";
+
 import Form from "next/form";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 
 export default function CreatePortfollioForm() {
+  const [image, setImage] = useState<File | null>(null);
+  const handleSubmit = async (formData: FormData) => {
+    const dataObj: any = {};
+    formData.forEach((value, key) => {
+      dataObj[key] = value;
+    });
+
+    const newFormData = new FormData();
+    newFormData.append("data", JSON.stringify(dataObj));
+
+    if (image) {
+      newFormData.append("file", image);
+    }
+
+    await createPortfollio(newFormData);
+    toast.success("new portfollio created")
+  };
   return (
     <Form
-      action={createPortfollio}
+      action={handleSubmit}
       className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-lg space-y-4 w-full"
     >
       <h2 className="text-xl font-semibold mb-4">Create Project</h2>
@@ -71,19 +93,6 @@ export default function CreatePortfollioForm() {
         />
       </div>
 
-      {/* Thumbnail */}
-      <div>
-        <label className="block text-sm font-medium mb-1" htmlFor="thumbnail">
-          Thumbnail URL
-        </label>
-        <input
-          type="url"
-          id="thumbnail"
-          name="thumbnail"
-          placeholder="https://example.com/images/project.png"
-          className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
-        />
-      </div>
 
       {/* Project URL */}
       <div>
@@ -112,7 +121,7 @@ export default function CreatePortfollioForm() {
           className="w-full rounded-md border px-3 py-2 focus:ring focus:ring-blue-200"
         />
       </div>
-
+      <SingleImageUploader onChange={setImage} />
       <button
         type="submit"
         className="w-full bg-blue-600 text-white font-medium py-2 rounded-md hover:bg-blue-700 transition"
