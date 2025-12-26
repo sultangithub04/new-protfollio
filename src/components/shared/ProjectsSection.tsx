@@ -7,6 +7,15 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
+    title: "Next.js Traveller Website",
+    description: "Traveller management site",
+    image: "/images/projects/new.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/sultangithub04/travel-font",
+    previewUrl: "https://fontnew.vercel.app",
+  },
+  {
+    id: 2,
     title: "React Restaurant Website",
     description: "Restaurant management site",
     image: "/images/projects/11.png",
@@ -15,7 +24,7 @@ const projectsData = [
     previewUrl: "https://restaurant-a10-ph.web.app",
   },
   {
-    id: 2,
+    id: 3,
     title: "Employee Management",
     description: "For Employee management of office",
     image: "/images/projects/12.png",
@@ -24,7 +33,7 @@ const projectsData = [
     previewUrl: "https://emis-a12.web.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "E-commerce Application",
     description: "Project sports selling site",
     image: "/images/projects/10.png",
@@ -33,7 +42,7 @@ const projectsData = [
     previewUrl: "https://lotus-a10.web.app",
   },
   {
-    id: 4,
+    id: 5,
     title: "Food Ordering Application",
     description: "Project 2 user roll using react.js, firebase and mongodb",
     image: "/images/projects/15.png",
@@ -51,7 +60,7 @@ const projectsData = [
   //   previewUrl: "/",
   // },
   {
-    id: 5,
+    id: 6,
     title: "React Firebase with career counseling",
     description: "Authentication and CRUD operations",
     image: "/images/projects/9.png",
@@ -59,33 +68,33 @@ const projectsData = [
     gitUrl: "https://github.com/programming-hero-web-course1/b10-a9-authentication-sultangithub04",
     previewUrl: "https://career-counseling-assignment.web.app/",
   },
-  {
-    id: 6,
-    title: "Full-stack Roadmap Next.js",
-    description: "Project  next.js applying crud with mongodb",
-    image: "/images/projects/14.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/sultangithub04/carDoctor",
-    previewUrl: "https://nextjs-car-doctor-green.vercel.app/",
-  },
-  {
-    id: 7,
-    title: "Digital wallet project with react.js",
-    description: "Digital wallet system with react.js",
-    image: "/images/projects/quickpay.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/sultangithub04/quickpayfont",
-    previewUrl: "https://quickpayfont.vercel.app",
-  },
-  {
-    id: 8,
-    title: "Full-stack project React.js",
-    description: "Picture Generate by AI",
-    image: "/images/projects/picseek.png",
-    tag: ["All", "Web"],
-    gitUrl: "https://github.com/sultangithub04/pic-seek-client.",
-    previewUrl: "https://crack-ai-server-40a76.web.app",
-  },
+  // {
+  //   id: 6,
+  //   title: "Full-stack Roadmap Next.js",
+  //   description: "Project  next.js applying crud with mongodb",
+  //   image: "/images/projects/14.png",
+  //   tag: ["All", "Web"],
+  //   gitUrl: "https://github.com/sultangithub04/carDoctor",
+  //   previewUrl: "https://nextjs-car-doctor-green.vercel.app/",
+  // },
+  // {
+  //   id: 7,
+  //   title: "Digital wallet project with react.js",
+  //   description: "Digital wallet system with react.js",
+  //   image: "/images/projects/quickpay.png",
+  //   tag: ["All", "Web"],
+  //   gitUrl: "https://github.com/sultangithub04/quickpayfont",
+  //   previewUrl: "https://quickpayfont.vercel.app",
+  // },
+  // {
+  //   id: 8,
+  //   title: "Full-stack project React.js",
+  //   description: "Picture Generate by AI",
+  //   image: "/images/projects/picseek.png",
+  //   tag: ["All", "Web"],
+  //   gitUrl: "https://github.com/sultangithub04/pic-seek-client.",
+  //   previewUrl: "https://crack-ai-server-40a76.web.app",
+  // },
 ];
 
 const ProjectsSection = () => {

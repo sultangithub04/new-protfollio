@@ -27,7 +27,7 @@ export default async function Home() {
         </div> */}
 
         <div className="px-4">
-          <h2 className="text-center my-8 text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+          <h2 className="text-center my-8 text-3xl md:text-4xl font-bold text-white bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
             Featured Posts
           </h2>
 

@@ -10,6 +10,7 @@ import { useState } from "react";
 
 export default function CreatePortfollioForm() {
   const [image, setImage] = useState<File | null>(null);
+  
   const handleSubmit = async (formData: FormData) => {
     const dataObj: any = {};
     formData.forEach((value, key) => {

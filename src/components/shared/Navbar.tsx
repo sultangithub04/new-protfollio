@@ -19,17 +19,17 @@ const Navbar = () => {
         path: "/",
       },
       {
-        title: "Projects",
+        title: "All Projects",
         path: "/projects",
       },
-      {
-        title: "Contact",
-        path: "/contact",
-      },
-      {
-        title: "About Me",
-        path: "/about",
-      },
+      // {
+      //   title: "Contact",
+      //   path: "/contact",
+      // },
+      // {
+      //   title: "About Me",
+      //   path: "/about",
+      // },
       {
         title: "All Blog",
         path: "/blogs",
