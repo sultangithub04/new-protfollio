@@ -96,7 +96,7 @@ export const createResume = async (data: FormData) => {
   const result = await res.json();
 
   if (result?.data?.id) {
-    revalidateTag("BLOGS");
+    // revalidateTag("BLOGS");
     revalidatePath("/blogs");
     redirect("/resume");
   }

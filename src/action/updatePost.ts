@@ -40,7 +40,7 @@ export const updatePost = async (data: FormData) => {
 
   console.log(result);
   if (result?.data?.id) {
-    revalidateTag("BLOGS");
+    // revalidateTag("BLOGS");
     revalidatePath("/blogs");
     redirect("/dashboard/update-blog");
   }

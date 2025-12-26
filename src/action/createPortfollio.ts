@@ -35,7 +35,7 @@ export const createPortfollio = async (formdata: FormData) => {
   const result = await res.json();
 
   if (result?.data?.id) {
-    revalidateTag("PROJECT");
+    // revalidateTag("PROJECT");
     revalidatePath("/projects");
     redirect("/projects");
   }

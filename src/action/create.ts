@@ -37,7 +37,7 @@ export const create = async (data: FormData) => {
 
   console.log(result);
   if (result?.data?.id) {
-    revalidateTag("BLOGS");
+    // revalidateTag("BLOGS");
     revalidatePath("/blogs");
     redirect("/blogs");
   }
