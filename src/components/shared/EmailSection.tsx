@@ -3,6 +3,7 @@
 
 
 import { FaWhatsapp, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { Button } from "../ui/button";
 
 const EmailSection = () => {
   // const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -126,12 +127,13 @@ const EmailSection = () => {
                 placeholder="Let's talk about..."
               />
             </div>
-            <button
+            <Button
               type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              className="cursor-pointer bg-gradient-to-br from-pink-500 to-blue-500 hover:bg-slate-200 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+             
             >
               Send Message
-            </button>
+            </Button>
           </form>
 
       </div>
