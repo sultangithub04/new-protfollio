@@ -121,6 +121,7 @@ const ProjectsSection = () => {
         My Projects
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"> */}
         <ProjectTag
           onClick={handleTagChange}
           name="All"
@@ -137,7 +138,8 @@ const ProjectsSection = () => {
           isSelected={tag === "Mobile"}
         />
       </div>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      {/* <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12"> */}
+      <ul ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto">
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}

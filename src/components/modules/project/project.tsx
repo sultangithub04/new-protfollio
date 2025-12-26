@@ -14,11 +14,12 @@ const Projects = ({dataProject}:any) => {
   };
 
   return (
-    <section id="projects">
+    <section id="projects" className="max-w-7xl mx-auto">
       <h2 className="text-center text-4xl font-bold text-white mt-24 mb-8 md:mb-12">
         My Projects
       </h2>
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+      {/* <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12"> */}
+      <ul ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {dataProject.map((project: { id: React.Key | null | undefined; title: string; description: string; thumbnail: string; repoUrl: string; projectUrl: string; }, index: React.Key | null | undefined) => (
           <motion.li
             key={index}

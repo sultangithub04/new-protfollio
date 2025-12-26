@@ -31,8 +31,8 @@ export default async function Home() {
             Featured Posts
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {blogs.data?.slice(0, 3).map((blog: any) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6  mx-auto">
+            {blogs.data?.slice(0, 4).map((blog: any) => (
               <BlogCard key={blog?.id} post={blog} />
             ))}
           </div>

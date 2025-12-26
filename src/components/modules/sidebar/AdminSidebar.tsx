@@ -47,6 +47,13 @@ export default function AdminSidebar() {
           Create porfollio
         </Link>
         <Link
+          href="/dashboard/manage-portfollio"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
+        >
+          <PlusCircle className="h-4 w-4" />
+          Manage porfollio
+        </Link>
+        <Link
           href="/dashboard/create-resume"
           className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
         >
